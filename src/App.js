@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import "./style.css";
+import Button from "./Button";
+import profile from "./images/me.jpg";
+import github from "./images/github.png";
+import contact from "./images/email.png"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <div className='Header'>
+        <img className="Profile" src={profile}/>
+        <h1>Mirel Korajac</h1>
+        <h3>Passionate Programmer</h3>
+      </div>
+      <div className="Button_Container">
+        <Button text="Github" image={github}/>
+        <Button text="Contact" image={contact}/>
+      </div>
     </div>
   );
 }
