@@ -9,7 +9,7 @@ function App() {
     <div className='App'>
       <div className='Header'>
         <img className="Profile" src={profile} alt="Profile of Mirel Korajac"/>
-        <h1>Mirel Korajac.</h1>
+        <h1>Mirel Korajac</h1>
         <h3>Passionate Programmer</h3>
       </div>
       <div className="Button_Container">
