@@ -1,12 +1,15 @@
 import "../style.css";
-import Button from "../Button";
+import Button from "../components/Button";
 import profile from "../images/me.jpg";
 import github from "../images/github.png";
-import contact from "../images/email.png"
+import contact from "../images/email.png";
+import Nav from "../components/Nav";
 
 function App() {
+
   return (
     <div className='App'>
+      <Nav />
       <div className='Header'>
         <img className="Profile" src={profile} alt="Profile of Mirel Korajac"/>
         <h1>Mirel Korajac</h1>
@@ -18,6 +21,7 @@ function App() {
       </div>
     </div>
   );
+
 }
 
 export default App;

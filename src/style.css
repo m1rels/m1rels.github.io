@@ -3,9 +3,8 @@
 .App {
     max-width: 1200px;
     margin: auto;
-    padding: 80px 50px 80px 50px;
+    padding: 20px 0;
 }
-
 
 .Header{
     color: white;
@@ -19,6 +18,10 @@ h1 {
     margin-bottom: 20px;
     margin-top: 20px;
     color: white;
+}
+
+.logo {
+    height: 50px;
 }
 
 .Button {
@@ -58,6 +61,99 @@ h1 {
 a:hover {
     color: purple;
 }
+
+a {
+    text-decoration: none;
+}
+
+.Button_Container {
+    padding: 0 40px;
+}
+
+.list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.collapsible__content {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all .3s;
+}
+
+.collapsible--expanded .collapsible__content {
+    max-height: 100vh;
+    opacity: 1;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.nav__logo {
+    padding-left: 10px;
+}
+
+.nav__toggler {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    transition: border .3s;
+}
+
+.nav__toggler:hover {
+    border: 1px solid white;
+    border-radius: 15px;
+}
+
+.nav__list {
+    width: 100%;
+    margin: 0;
+}
+
+.nav__item {
+    border-bottom: 1px solid white;
+    padding: 15px;
+    font-family: "Roboto Mono";
+}
+
+.nav__item > a {
+    color: white;
+    transition: color .3s;
+}
+
+.nav__item > a:hover {
+    color: dodgerblue;
+}
+
+@media screen and (min-width: 768px) {
+    .nav__toggler {
+        display: none;
+    }
+
+    .nav__list {
+        width: auto;
+        display: flex;
+        opacity: 1;
+        max-height: 100%;
+        justify-content: space-between;
+    }
+
+    .nav__item {
+        border: 0;
+        padding: 20px;
+    }
+
+    .nav__item > a {
+        font-size: 20px;
+    }
+}
+
 
 @media (min-width: 600px) {
     h1 {
