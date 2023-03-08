@@ -90,6 +90,24 @@ a {
     padding-left: 0;
 }
 
+.Card {
+    padding: 0 30px;
+    margin: 40px 0;
+    text-align: center;
+}
+
+.Card__header {
+    margin: 30px 0;
+}
+
+.Card__content {
+
+}
+
+.card__image {
+    height: 200px;
+}
+
 .collapsible__content {
     opacity: 0;
     max-height: 0;
@@ -183,6 +201,10 @@ a {
 
     .Profile {
         height: 200px;
+    }
+
+    .Card__image {
+        height: 250px;
     }
 
     .nav__toggler {
