@@ -9,7 +9,7 @@ export default function Nav() {
 
     return(
         <nav className={isNavExpanded ? "collapsible--expanded nav" : "collapsible nav"}>
-            <Link to="#"><img className="nav__logo" src={dollar} /></Link>
+            <Link to=""><img className="nav__logo" src={dollar} /></Link>
             <button className="nav__toggler" 
                     onClick={() => {
                         setIsNavExpanded(!isNavExpanded);
@@ -19,8 +19,8 @@ export default function Nav() {
             </svg>
             </button>
             <ul className="list nav__list collapsible__content">
-                <li className="nav__item"><Link>About</Link></li>
-                <li className="nav__item"><Link>Blog</Link></li>
+                <li className="nav__item"><Link to="/about">About</Link></li>
+                <li className="nav__item"><Link to="/blog">Blog</Link></li>
             </ul>
         </nav>
     )
