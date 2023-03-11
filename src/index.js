@@ -10,6 +10,7 @@ import App from './routes/App';
 import Contact from "./routes/Contact";
 import reportWebVitals from './reportWebVitals';
 import About from './routes/About';
+import Blog from './routes/Blog';
 
 const router = createHashRouter([
   {
@@ -26,7 +27,7 @@ const router = createHashRouter([
   },
   {
     path: "blog",
-    element: <About />,
+    element: <Blog />,
   },
 ]);
 
