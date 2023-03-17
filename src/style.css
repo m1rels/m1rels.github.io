@@ -80,6 +80,7 @@ a:hover {
 
 a {
     text-decoration: none;
+    cursor: pointer;
 }
 
 .Button_Container {
@@ -89,6 +90,10 @@ a {
 .list {
     list-style-type: none;
     padding-left: 0;
+}
+
+li {
+    color: white;
 }
 
 .Card {
@@ -165,8 +170,8 @@ a {
     margin-bottom: 50px;
 }
 
-.Skills__section {
-    padding: 0 30px;
+.Skills__heading {
+    padding-left: 30px;
 }
 
 .Skills__container {
@@ -175,6 +180,31 @@ a {
     flex-direction: column;
 }
 
+.Blog__heading {
+    margin-bottom: 50px;
+}
+
+.Project__section {
+    padding: 0 20px;
+}
+
+.Project__item {
+    list-style: none;
+    margin-bottom: 40px;
+    padding-left: 0;
+}
+
+.Project__heading {
+    margin-bottom: 20px;
+}
+
+.Project__text {
+    margin: 10px;
+}
+
+.Project__link {
+    padding-left: 10px;
+}
 
 @media screen and (min-width: 768px) {
 
@@ -252,6 +282,12 @@ a {
         padding-left: 30px;
         padding-top: 20px;
     }
+
+    .Skills__container .Card {
+        padding: 0 30px;
+    }
+
+
 }
 
 @media screen and (min-width: 1200px) {
