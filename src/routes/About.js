@@ -2,6 +2,7 @@ import "../style.css";
 import html from "../images/html-5.png";
 import css from "../images/css-3.png";
 import javascript from "../images/js.png";
+import Nav from "../components/Nav";
 
 
 const skills = [
@@ -28,7 +29,8 @@ const skills = [
 export default function About() {
 
     return(
-        <div className="App">
+        <div className="">
+            <Nav />
             <div className="About__section">
                 <h1>About</h1>
                 <p>Hi, I'm Mirel Korajac! I am a 16-year-old programmer skilled in both front-end and back-end development. With a passion for coding, I have dedicated countless hours to honing my craft and perfecting my skills. In addition to my technical prowess, I enjoy staying active and participate in various sports activities during my free time. When not coding or breaking a sweat, you can find me relaxing with friends and indulging in my favorite movies and TV shows.</p>

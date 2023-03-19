@@ -8,7 +8,7 @@ import Nav from "../components/Nav";
 function App() {
 
   return (
-    <div className='App'>
+    <div className=''>
       <Nav />
       <div className='Header'>
         <img className="Profile" src={profile} alt="Profile of Mirel Korajac"/>
