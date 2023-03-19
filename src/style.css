@@ -11,6 +11,7 @@
     font-family: "Roboto Mono";
     text-align: center;
     margin-bottom: 70px;
+    margin-top: 68px;
 }
 
 h1, h2, h3, p {
@@ -127,6 +128,10 @@ li {
     align-items: center;
     flex-wrap: wrap;
     margin-bottom: 40px;
+    background-color: #01073d;
+    position: fixed;
+    width: 100%;
+    top: 0;
 }
 
 .nav__logo {
@@ -165,9 +170,14 @@ li {
     color: dodgerblue;
 }
 
+.Contact__heading {
+    margin-top: 68px;
+}
+
 .About__section {
     padding: 0 30px;
     margin-bottom: 50px;
+    margin-top: 68px;
 }
 
 .Skills__heading {
@@ -182,6 +192,7 @@ li {
 
 .Blog__heading {
     margin-bottom: 50px;
+    margin-top: 68px;
 }
 
 .Project__section {
