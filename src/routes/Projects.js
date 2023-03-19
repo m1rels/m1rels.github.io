@@ -40,9 +40,9 @@ const projects = [
 
 export default function Blog() {
     return (
-        <div className="App">
+        <div className="">
             <Nav />
-            <h1 className="Blog__heading">My Blog</h1>
+            <h1 className="Blog__heading">My Projects</h1>
             <div className="Project__section">
             {projects.map((project) => 
                  <ul className="Project__item">

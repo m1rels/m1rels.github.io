@@ -10,7 +10,7 @@ import App from './routes/App';
 import Contact from "./routes/Contact";
 import reportWebVitals from './reportWebVitals';
 import About from './routes/About';
-import Blog from './routes/Blog';
+import Project from './routes/Projects';
 
 const router = createHashRouter([
   {
@@ -26,9 +26,9 @@ const router = createHashRouter([
     element: <About />,
   },
   {
-    path: "blog",
-    element: <Blog />,
-  },
+     path: "projects",
+     element: <Project />,
+   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
