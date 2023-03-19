@@ -1,6 +1,9 @@
 import Nav from "../components/Nav";
 import "../style.css";
 
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+
 const projects = [
     {
         heading: "From Web to App-development",
@@ -42,6 +45,7 @@ export default function Blog() {
     return (
         <div>
             <Nav />
+            <div data-aos="fade-up">
             <h1 className="Blog__heading">My Projects</h1>
             <div className="Project__section">
             {projects.map((project) => 
@@ -64,5 +68,8 @@ export default function Blog() {
             )}
             </div>
         </div>
+        </div>
     )
 }
+
+AOS.init();

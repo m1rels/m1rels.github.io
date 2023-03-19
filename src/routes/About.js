@@ -31,6 +31,7 @@ export default function About() {
     return(
         <div className="">
             <Nav />
+            <div data-aos="fade-up">
             <div className="About__section">
                 <h1>About</h1>
                 <p>Hi, I'm Mirel Korajac! I am a 16-year-old programmer skilled in both front-end and back-end development. With a passion for coding, I have dedicated countless hours to honing my craft and perfecting my skills. In addition to my technical prowess, I enjoy staying active and participate in various sports activities during my free time. When not coding or breaking a sweat, you can find me relaxing with friends and indulging in my favorite movies and TV shows.</p>
@@ -52,6 +53,7 @@ export default function About() {
                     }
                 </div>
             </div>
+        </div>
         </div>
     )
 }
