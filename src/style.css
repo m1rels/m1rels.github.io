@@ -6,6 +6,11 @@
     padding: 20px 0;
 }
 
+.App__section {
+    position: relative;
+    z-index: -1;
+}
+
 .Header{
     color: white;
     font-family: "Roboto Mono";

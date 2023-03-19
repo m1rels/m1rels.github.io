@@ -14,7 +14,7 @@ function App() {
   return (
     <div>
       <Nav />
-      <div data-aos="zoom-in">
+      <div data-aos="zoom-in" className="App__section">
       <div className='Header'>
         <img className="Profile" src={profile} alt="Profile of Mirel Korajac"/>
         <h1>Mirel Korajac</h1>
