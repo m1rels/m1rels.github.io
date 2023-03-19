@@ -174,6 +174,14 @@ li {
     margin-top: 68px;
 }
 
+.Contact__text {
+    margin-bottom: 10px;
+}
+
+.Contact__link {
+    margin-top: 10px;
+}
+
 .About__section {
     padding: 0 30px;
     margin-bottom: 50px;

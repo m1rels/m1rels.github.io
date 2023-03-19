@@ -5,10 +5,11 @@ import Nav from "../components/Nav";
 
 function Contact() {
     return (
-        <div className="">
+        <div>
         <Nav />
-        <h1 className="contact__heading">Contact</h1>
-        <h3><Link to="mailto:mirelkorajac@gmail.com">mirelkorajac@gmail.com</Link></h3>
+        <h1 className="Contact__heading">Contact</h1>
+        <h3 className="Contact__text">If you want to contact me, just send an email ;)</h3>
+        <h2 className="Contact__link"><Link to="mailto:mirelkorajac@gmail.com">mirelkorajac@gmail.com</Link></h2>
         </div>
     )
 }

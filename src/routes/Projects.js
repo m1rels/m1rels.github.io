@@ -40,7 +40,7 @@ const projects = [
 
 export default function Blog() {
     return (
-        <div className="">
+        <div>
             <Nav />
             <h1 className="Blog__heading">My Projects</h1>
             <div className="Project__section">
