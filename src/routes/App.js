@@ -9,7 +9,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 
 
-function App() {
+export default function App() {
 
   return (
     <div>
@@ -31,4 +31,4 @@ function App() {
 
 AOS.init();
 
-export default App;
+

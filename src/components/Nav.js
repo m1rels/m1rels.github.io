@@ -3,7 +3,7 @@ import React, {useState} from "react";
 import dollar from "../images/dollar.png";
 import { Link } from "react-router-dom";
 
-export default function Nav() {
+function Nav() {
     
     const [isNavExpanded, setIsNavExpanded] = useState(false);
 
@@ -25,3 +25,5 @@ export default function Nav() {
         </nav>
     )
 }
+
+export default Nav;
