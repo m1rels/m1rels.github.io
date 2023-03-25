@@ -9,7 +9,7 @@ const projects = [
         heading: "From Web to App-development",
         description:"I now have a fundamental basis of React Native and built my first mobile app called DoneWithIt. For this I used Expo-CLI.",
         url: "https://github.com/m1rels/done-with-it-app",
-        url_2: "htps://github.com/m1rels/done-with-it-backend"
+        url_2: "https://github.com/m1rels/done-with-it-backend"
     },
     {
         heading: "Into backend-development",
