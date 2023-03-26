@@ -9,7 +9,6 @@ import 'aos/dist/aos.css';
 export default function Contact() {
     return (
         <div>
-        <Nav />
         <div data-aos="fade-right">
         <h1 className="Contact__heading">Contact</h1>
         <h3 className="Contact__text">If you want to contact me, just send an email ;)</h3>

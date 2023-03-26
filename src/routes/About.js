@@ -30,7 +30,6 @@ export default function About() {
 
     return(
         <div className="">
-            <Nav />
             <div data-aos="fade-up">
             <div className="About__section">
                 <h1>About</h1>

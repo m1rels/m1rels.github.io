@@ -44,7 +44,6 @@ const projects = [
 export default function Blog() {
     return (
         <div>
-            <Nav />
             <div data-aos="fade-up">
             <h1 className="Blog__heading">My Projects</h1>
             <div className="Project__section">
