@@ -1,39 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import {
-  createHashRouter,
-  RouterProvider,
-} from "react-router-dom";
 
-import App from './routes/App';
-import Contact from "./routes/Contact";
 import reportWebVitals from './reportWebVitals';
-import About from './routes/About';
-import Project from './routes/Projects';
+import App from './App';
 
-const router = createHashRouter([
-  {
-    path: "/",
-    element: <App />,
-  },
-  {
-    path: "contact",
-    element: <Contact />,
-  },
-  {
-    path: "about",
-    element: <About />,
-  },
-  {
-     path: "projects",
-     element: <Project />,
-   },
-]);
+
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <App />
   </React.StrictMode>
 );
 

@@ -7,6 +7,7 @@ import Nav from "../components/Nav";
 
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
+import Collapsible from "../components/Collapsible";
 
 
 export default function App() {
