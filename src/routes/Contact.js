@@ -7,6 +7,20 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 
 export default function Contact() {
+
+    const translations = {
+        en: {
+         header: "Contact",
+         buttonText: "If you want to contact me, just send an email ;)",
+         text: "Here's my email address:"
+       },
+        deu: {
+         header: 'Kontakt',
+         buttonText: "Wenn Sie mich kontaktieren möchten, senden Sie mir einfach eine Mail:)",
+         text: "Hier ist meine Email Adresse"
+       },
+     }
+
     return (
         <div>
         <div data-aos="fade-right">
