@@ -110,10 +110,34 @@ li {
     height: 150px;
 }
 
+.Collapsible {
+    border: 3px solid white;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.Collapsible__heading {
+    float: left;
+    margin: 0 10px 0 0;
+}
+
+.toggler {
+    transform: rotate(0);
+    transition: transform .3s;
+}
+
+.collapsible--expanded .toggler {
+    transition: transform .3s;
+    transform: rotate(90deg);
+}
+
+.Collapsible__selection {
+    margin: 0;
+}
+
 .collapsible__content {
     opacity: 0;
     max-height: 0;
-    overflow: hidden;
     transition: all .3s;
 }
 
