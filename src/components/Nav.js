@@ -2,7 +2,7 @@ import "../style.css";
 import React, {useState} from "react";
 import dollar from "../images/dollar.png";
 import { Link } from "react-router-dom";
-import Collapsible from "./Collapsible";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 function Nav() {
     
@@ -11,8 +11,10 @@ function Nav() {
     return(
         
         <nav className={isNavExpanded ? "collapsible--expanded nav" : "collapsible nav"}>
-            <Link to="/"><img className="nav__logo" src={dollar} /></Link>
-            <Collapsible />
+            <div className="nav__part">
+                <Link to="/"><img className="nav__logo" src={dollar} /></Link>
+                <LanguageSwitcher/>
+            </div>
             <button className="nav__toggler" 
                     onClick={() => {
                         setIsNavExpanded(!isNavExpanded);

@@ -102,10 +102,6 @@ li {
     text-align: center;
 }
 
-.Card__content {
-
-}
-
 .Card__image {
     height: 150px;
 }
@@ -181,11 +177,50 @@ li {
     margin: 0;
 }
 
+.nav__part {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
 .nav__item {
     border-bottom: 1px solid white;
     padding: 15px;
     font-family: "Roboto Mono";
 }
+ 
+.custom-select {
+    display: inline-block;
+    position: relative;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    overflow: hidden;
+  }
+
+.name {
+    font-size: 20;
+}
+
+.custom-select select {
+    background-color: transparent;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: "Roboto Mono";
+  }
+
+.custom-select :hover {
+    color: dodgerblue;
+    transition: color .3s;
+  }
+
+.custom-select select option :hover {
+    background-color: dodgerblue;
+  }
+
 
 .nav__item > a {
     color: white;
@@ -308,6 +343,10 @@ li {
     }
 
     .nav__item > a {
+        font-size: 20px;
+    }
+
+    .custom-select select {
         font-size: 20px;
     }
 
