@@ -1,6 +1,6 @@
 import Nav from "../components/Nav";
 import "../style.css";
-
+import { useLanguage } from '../LanguageContext';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 
@@ -46,11 +46,11 @@ const projects = [
     {   
         en: {
             heading: "Complex browser games",
-            description:"Later on I went on with writing browser games but with more complexity and logic.",
+            description:"Later on I went on with writing browser games but with more complexity and logic. If you go to my GitHub profile, you will see a few projects like Memory, Connect Four, Space Invaders etc.",
         },
         de: {
             heading: "Komplexe Browser-Spiele",
-            description:"Später habe ich angefangen, etwas komplexere Browser Spiele zu bauen, die etwas mehr Logik enthalteten.",
+            description:"Später habe ich angefangen, etwas komplexere Browser Spiele zu bauen, die etwas mehr Logik enthalteten. Wenn Sie auf GitHub den Code besichitgen wollen, finden Sie eingie Projekte wie Memory, Vier gewinnt, Space Invaders etc.",
         },
         url: "https://github.com/m1rels",
     },
@@ -81,6 +81,9 @@ const projects = [
 ]
 
 export default function Blog() {
+
+    const { language } = useLanguage();
+
     return (
         <div>
             <div data-aos="fade-up">
@@ -89,9 +92,9 @@ export default function Blog() {
             {projects.map((project) => 
                  <ul className="Project__item">
                     <li>
-                     <h2 className="Project__heading">{project.heading}</h2>
-                     <p className="Project__text">{project.description}</p>
-                     <p className="Project__text">Take a look at the corresponding code:</p>
+                     <h2 className="Project__heading">{language === 'en' ? project.en.heading : project.de.heading}</h2>
+                     <p className="Project__text">{language === 'en' ? project.en.description : project.de.description}</p>
+                     <p className="Project__text"> {language === "en" ? "Take a look at the corresponding code:" : "Werfen Sie einen Blick auf den entsprechenden Code:"}</p>
                     <ul>
                         <li className="Project__text"><a>{project.url}</a></li>
                         {(() => {if (project.url_2) {

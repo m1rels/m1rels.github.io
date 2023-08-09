@@ -3,15 +3,19 @@ import html from "../images/html-5.png";
 import css from "../images/css-3.png";
 import javascript from "../images/js.png";
 import Nav from "../components/Nav";
+import { useLanguage } from '../LanguageContext';
 
-const about = {
-    en: {
-        text: "Hi, I'm Mirel Korajac! I am a 16-year-old programmer skilled in both front-end and back-end development. With a passion for coding, I have dedicated countless hours to honing my craft and perfecting my skills. In addition to my technical prowess, I enjoy staying active and participate in various sports activities during my free time. When not coding or breaking a sweat, you can find me relaxing with friends and indulging in my favorite movies and TV shows."
-    },
-    de: {
-        text: "Hallo, ich bin Mirel Korajac! Ich bin ein 16-jähriger Programmierer mit Fähigkeiten in der Front-End- und Back-End-Entwicklung. Mit einer Leidenschaft für das Codieren habe ich unzählige Stunden damit verbracht, mein Handwerk zu verfeinern und meine Fähigkeiten zu perfektionieren. Neben meinem technischen Können genieße ich es, aktiv zu bleiben und in meiner Freizeit an verschiedenen Sportaktivitäten teilzunehmen. Wenn ich nicht am Codieren oder beim Sport bin, findet man mich beim Entspannen mit Freunden und beim Genießen meiner Lieblingsfilme und TV-Serien."
+const about =  {
+        en: {
+            subheading: "I'm Mirel Korajac, a dedicated and ambitious 17-year-old programmer who is deeply immersed in the art of coding and software development.",
+            description: "Allow me to introduce myself. My name is Mirel Korajac, and I reside in Germany. I have a strong passion for programming, and my particular fascination lies in crafting websites, apps, and other specialized applications from scratch. Beyond programming, I find immense joy in playing soccer ⚽ – it's a sport I love both on and off the field. I also avidly follow soccer matches, staying updated on the latest in the football world. When I'm not engrossed in coding or kicking a ball around, you can often find me hanging out with my friends, enjoying their company, and occasionally hitting the dance floor at parties 🎉.",
+        },
+        de: {
+            subheading: "Ich bin Mirel Korajac, bin 17 Jahre alt und habe es zu meiner Leidenschaft gemacht, zu coden und bin begeistert von jeder Art von  Software.",
+            description: "Erlaubt mir, mich vorzustellen. Ich bin Mirel Korajac und lebe in Deutschland. Die Welt des Programmierens fasziniert mich zutiefst, und insbesondere das Erschaffen von Websites, Apps und anderen spezialisierten Anwendungen begeistert mich. Neben dem Programmieren liebe ich es, Fußball zu spielen ⚽ – eine Sportart, die ich sowohl auf dem Spielfeld als auch abseits davon sehr schätze. Ich verfolge Fußballspiele mit großer Begeisterung und halte mich stets über die neuesten Entwicklungen in der Fußballwelt auf dem Laufenden. Wenn ich nicht gerade im Code vertieft bin oder einen Ball trete, trifft man mich oft dabei an, wie ich Zeit mit meinen Freunden verbringe, ihre Gesellschaft genieße und gelegentlich auf Partys das Tanzbein schwingen lasse 🎉.",
+        }
     }
-}
+    
 
 const skills = [
     {
@@ -52,15 +56,19 @@ const skills = [
 
 export default function About() {
 
+    const { language } = useLanguage();
+
     return(
         <div className="">
             <div data-aos="fade-up">
             <div className="About__section">
-                <h1>About</h1>
-                <p>Hi, I'm Mirel Korajac! I am a 16-year-old programmer skilled in both front-end and back-end development. With a passion for coding, I have dedicated countless hours to honing my craft and perfecting my skills. In addition to my technical prowess, I enjoy staying active and participate in various sports activities during my free time. When not coding or breaking a sweat, you can find me relaxing with friends and indulging in my favorite movies and TV shows.</p>
+                <h1>Hello, world! 👋,</h1>
+                <p>{language === 'en' ? about.en.subheading : about.de.subheading}</p>
+                <h3>{language === 'en' ? "About Me" : "Über Mich"}</h3>
+                <p>{language === 'en' ? about.en.description : about.de.description}</p>
             </div>
             <div className="Skills__section">
-                <h1 className="Skills__heading">My skills</h1>
+                <h1 className="Skills__heading">{language === 'en' ? "My skills" : "Meine Fähigkeiten"}</h1>
                 <div className="Skills__container">
                     {skills.map((card) => 
                         <div className="Card" key={card.id}>
@@ -69,7 +77,7 @@ export default function About() {
                                 <img className="Card__image" src={card.image} />
                             </div>
                             <div className="Card__content">
-                                <p>{card.description}</p>
+                                <p>{language === 'en' ? card.en.description : card.de.description}</p>
                             </div>
                         </div>
                             )
