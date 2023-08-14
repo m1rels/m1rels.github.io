@@ -1,13 +1,13 @@
-import "../style.css";
-import React from "react";
-import { Link } from "react-router-dom";
+import styles from "./button.module.css";
+import Image from "next/image";
+import Link from "next/link";
 
 function Button({text, image, link, string}) {
     return (
-        <Link to={link} className="Button">
-            <img className="Icon" src={image} alt={string} />
-            <p className="Button_text">{text}</p>
-        </Link>
+            <Link href={link} className={styles.button}>
+                <Image className={styles.icon} src={image} alt={string} />
+                <p className={styles.button__text}>{text}</p>
+            </Link>
     )
 }
 

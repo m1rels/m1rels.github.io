@@ -1,0 +1,126 @@
+/* NavBar*/
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: black;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+    padding: 10px;
+}
+
+.nav__logo {
+    padding-left: 10px;
+}
+
+.nav__toggler {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    transition: border .3s;
+}
+
+.nav__toggler:hover {
+    border: 1px solid white;
+    border-radius: 15px;
+}
+
+.nav__list {
+    width: 100%;
+    margin: 0;
+}
+
+.nav__part {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav__item {
+    border-bottom: 1px solid white;
+    padding: 15px;
+}
+ 
+.nav__item > a {
+    color: white;
+    transition: color .3s;
+}
+
+.nav__item > a:hover {
+    color: dodgerblue;
+}
+
+.nav__toggler {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    transition: border .3s;
+}
+
+.nav__toggler:hover {
+    border: 1px solid white;
+    border-radius: 15px;
+}
+
+.collapsible__heading {
+    float: left;
+    margin: 0 10px 0 0;
+}
+
+.toggler {
+    transform: rotate(0);
+    transition: transform .3s;
+}
+
+.collapsible_expanded .toggler {
+    transition: transform .3s;
+    transform: rotate(90deg);
+}
+
+.collapsible__selection {
+    margin: 0;
+}
+
+.collapsible__content {
+    opacity: 0;
+    max-height: 0;
+    transition: all .3s;
+}
+
+.collapsible_expanded .collapsible__content {
+    max-height: 100vh;
+    opacity: 1;
+}
+
+.list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+@media screen and (min-width: 768px) {
+    .nav__toggler {
+        display: none;
+    }
+
+    .nav__list {
+        width: auto;
+        display: flex;
+        opacity: 1;
+        max-height: 100%;
+        justify-content: space-between;
+    }
+
+    .nav__item {
+        border: 0;
+        padding: 20px;
+    }
+
+    .nav__item > a {
+        font-size: 20px;
+    }
+
+}
