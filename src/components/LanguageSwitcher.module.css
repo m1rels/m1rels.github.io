@@ -1,0 +1,32 @@
+/* LanguageSwitcher */
+
+.custom_select {
+    display: inline-block;
+    position: relative;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    overflow: hidden;
+  }
+
+.name {
+    font-size: 20;
+}
+
+.custom_select select {
+    background-color: transparent;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+.custom_select :hover {
+    color: dodgerblue;
+    transition: color .3s;
+  }
+
+.custom_select select option :hover {
+    background-color: dodgerblue;
+  }

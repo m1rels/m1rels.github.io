@@ -1,0 +1,36 @@
+
+.home {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: auto;
+  padding: 20px 0;
+  height: 100%;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 70px;
+  margin-top: 68px;
+}
+
+.profile {
+  height: 150px;
+  width: 150px;
+  border-radius: 125px;
+}
+
+.button_container {
+  padding: 0 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .home {
+    max-width: 500px;
+  }
+  .profile {
+    height: 200px;
+    width: 200px;
+    border-radius: 125px;
+  }
+}

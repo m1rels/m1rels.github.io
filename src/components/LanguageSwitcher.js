@@ -1,7 +1,5 @@
-import "../style.css"
-import React from 'react';
+import styles from "./LanguageSwitcher.module.css";
 import { useLanguage } from '../LanguageContext';
-
 
 const LanguageSwitcher = () => {
 
@@ -14,9 +12,9 @@ const LanguageSwitcher = () => {
   
 
   return (
-    <div className="custom-select">
+    <div className={styles.custom_select}>
       <select onChange={handleLanguageChange}>
-        <option value="en" className="name">ENG &#127468;&#127463;</option>
+        <option value="en" className={styles.name}>ENG &#127468;&#127463;</option>
         <option value="de">DE &#127465;&#127466;</option>
       </select>
     </div>
