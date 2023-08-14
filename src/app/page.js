@@ -3,7 +3,7 @@
 import styles from './page.module.css'
 import { useLanguage } from '../LanguageContext';
 import { useEffect } from "react";
-import Button from "../components/button";
+import Button from "@/components/Button";
 import profile from "../images/me.jpg"
 import github from "../images/github.png";
 import contact from "../images/email.png";
