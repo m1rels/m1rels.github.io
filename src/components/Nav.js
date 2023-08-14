@@ -16,7 +16,7 @@ function Nav() {
         <nav className={isNavExpanded ? `${styles.collapsible_expanded} ${styles.nav}`  : `${styles.collapsible} ${styles.nav}`}>
             <div className={styles.nav__part}>
                 <Link href="/">
-                <Image className={styles.nav__logo} src={dollar} alt="" />
+                <Image className={styles.nav__logo} src={dollar} alt=""  width={70} height={60}/>
                 </Link>
                 <LanguageSwitcher/>
             </div>

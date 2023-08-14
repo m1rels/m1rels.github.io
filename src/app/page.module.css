@@ -4,7 +4,7 @@
   flex-direction: column;
   max-width: 400px;
   margin: auto;
-  padding: 20px 0;
+  padding: 20px 40px;
   height: 100%;
 }
 
@@ -20,9 +20,6 @@
   border-radius: 125px;
 }
 
-.button_container {
-  padding: 0 40px;
-}
 
 @media screen and (min-width: 768px) {
   .home {
