@@ -1,14 +1,12 @@
+import { Button, ButtonGroup } from "@chakra-ui/react";
 import styles from "./button.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
-function Button({text, image, link, string}) {
+function AppButton({text, icon}) {
     return (
-            <Link href={link} className={styles.button}>
-                <Image className={styles.icon} src={image} alt={string} />
-                <p className={styles.button__text}>{text}</p>
-            </Link>
+            <Button leftIcon={icon} size="lg" colorScheme='teal'>{text}</Button>
     )
 }
 
-export default Button;
+export default AppButton;

@@ -1,23 +1,44 @@
 import styles from "./LanguageSwitcher.module.css";
-import { useLanguage } from '../LanguageContext';
+import {
+  Box,
+  Button,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuItemOption,
+  MenuGroup,
+  MenuOptionGroup,
+  MenuDivider,
+} from "@chakra-ui/react";
+import { useLanguage } from "../LanguageContext";
 
 const LanguageSwitcher = () => {
+  const { language, setLanguage } = useLanguage();
 
-    const { language, setLanguage } = useLanguage();
-
-    const handleLanguageChange = (event) => {
-      const selectedLanguage = event.target.value;
-      setLanguage(selectedLanguage);
-    };
-  
+  const handleLanguageChange = (selectedLanguage) => {
+    setLanguage(selectedLanguage);
+  };
 
   return (
-    <div className={styles.custom_select}>
-      <select onChange={handleLanguageChange}>
-        <option value="en" className={styles.name}>ENG &#127468;&#127463;</option>
-        <option value="de">DE &#127465;&#127466;</option>
-      </select>
-    </div>
+    <Box mt={2}>
+    <Menu>
+      <MenuButton as={Button}>
+        {language === "en" ? "ENG 🇬🇧" : "DE 🇩🇪"}
+      </MenuButton>
+      <MenuList>
+        {language === "en" ? (
+          <MenuItem value="de" onClick={() => handleLanguageChange("de")}>
+            DE 🇩🇪
+          </MenuItem>
+        ) : (
+          <MenuItem value="en" onClick={() => handleLanguageChange("en")}>
+            ENG 🇬🇧
+          </MenuItem>
+        )}
+      </MenuList>
+    </Menu>
+    </Box>
   );
 };
 

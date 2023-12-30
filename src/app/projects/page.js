@@ -3,8 +3,9 @@
 import styles from "./projects.module.css";
 import { useLanguage } from '../../LanguageContext';
 import AOS from 'aos';
-import Link from 'next/link';
+import { Link } from '@chakra-ui/next-js'
 import { useEffect } from "react";
+import { Box, Card, CardBody, CardHeader, Container, Heading, List, ListItem, SimpleGrid, Text, UnorderedList } from "@chakra-ui/react";
 import 'aos/dist/aos.css'; 
 
 const projects = [
@@ -35,7 +36,6 @@ const projects = [
             description:"Als ich mich mit dem Frontend vertraut  gemacht habe, bin ich ins Backend eingestiegen und habe das Konzept von Node.js gelernt. So bin ich dazu gekommen, Node.js Applikationen mit React zu machen.",
         },
         url: "https://github.com/m1rels/formel-1",
-        url_2 : "https://github.com/m1rels/formel-1-backend"
     },
     {
         id: 3,
@@ -98,30 +98,32 @@ export default function Blog() {
       }, []);
 
     return (
-        <div className='page'>
-            <div data-aos="fade-up">
-            <h1>My Projects</h1>
-            <div className={styles.project__section}>
+        <Container maxW="container.xl" pb={88}>
+            <Box data-aos="fade-up" m="0" p={0}>
+            <Heading as="h1" size="2xl" mb="50px" >My Projects</Heading>
+            <SimpleGrid minChildWidth={[300, 350, 400]} spacing={10}>
             {projects.map((project) => 
-                 <ul className={styles.project__item} key={project.id}>
-                    <li>
-                     <h2>{language === 'en' ? project.en.heading : project.de.heading}</h2>
-                     <p>{language === 'en' ? project.en.description : project.de.description}</p>
-                     <p className={styles.project__text}> {language === "en" ? "Take a look at the corresponding code:" : "Werfen Sie einen Blick auf den entsprechenden Code:"}</p>
-                    <ul>
-                        <li className={styles.project__text}><Link href={project.url}>{project.url}</Link></li>
+                 <Card key={project.id} borderRadius="20px">
+                    <CardHeader>
+                     <Heading as="h2" size="xl" mt="0">{language === 'en' ? project.en.heading : project.de.heading}</Heading>
+                     <Text mb="0">{language === 'en' ? project.en.description : project.de.description}</Text>
+                     </CardHeader>
+                     <CardBody pt="0">
+                     <Text mt="0"> {language === "en" ? "Take a look at the corresponding code:" : "Werfen Sie einen Blick auf den entsprechenden Code:"}</Text>
+                    <UnorderedList>
+                        <ListItem><Link href={project.url}>{project.url}</Link></ListItem>
                         {(() => {if (project.url_2) {
-                            return <li className={styles.project__text}><Link href={project.url_2}>{project.url_2}</Link></li>
+                            return <ListItem><Link href={project.url_2}>{project.url_2}</Link></ListItem>
                             } else {
                             return null;
                             }
                         })()}
-                     </ul>
-                    </li>
-                </ul>
+                     </UnorderedList>
+                    </CardBody>
+                </Card>
             )}
-            </div>
-        </div>
-        </div>
+            </SimpleGrid>
+            </Box>
+            </Container>
     )
 }

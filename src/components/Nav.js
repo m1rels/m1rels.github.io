@@ -1,39 +1,86 @@
-'use client'
+"use client";
 
-import React, {useState} from "react";
-import styles from "./Nav.module.css";
-import dollar from "../images/dollar.png";
-import Link from "next/link";
-import LanguageSwitcher from "./LanguageSwitcher";
-import Image from "next/image";
+import React from "react";
+import { FaMoon } from "react-icons/fa";
+import { FiSun } from "react-icons/fi";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+import NextLink from "next/link";
+import {
+  Box,
+  Flex,
+  IconButton,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  useColorMode,
+  useColorModeValue
+} from "@chakra-ui/react";
+import { HamburgerIcon } from "@chakra-ui/icons";
+import { Link } from '@chakra-ui/next-js'
+
 
 function Nav() {
-    
-    const [isNavExpanded, setIsNavExpanded] = useState(false);
+  const { colorMode, toggleColorMode } = useColorMode();
+  const bg = useColorModeValue('white', 'gray.800')
 
-    return(
-        
-        <nav className={isNavExpanded ? `${styles.collapsible_expanded} ${styles.nav}`  : `${styles.collapsible} ${styles.nav}`}>
-            <div className={styles.nav__part}>
-                <Link href="/">
-                <Image className={styles.nav__logo} src={dollar} alt=""  width={70} height={60}/>
-                </Link>
-                <LanguageSwitcher/>
-            </div>
-            <button className={styles.nav__toggler} 
-                    onClick={() => {
-                        setIsNavExpanded(!isNavExpanded);
-            }}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white" className="bi bi-list" viewBox="0 0 16 16">
-              <path fillRule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-            </svg>
-            </button>
-            <ul className={`${styles.list} ${styles.nav__list} ${styles.collapsible__content}`}>
-                <li className={styles.nav__item}><Link href="/about">About</Link></li>
-                <li className={styles.nav__item}><Link href="/projects">Projects</Link></li>
-            </ul>
-        </nav>
-    )
+  return (
+    <Flex
+      as="nav"
+      align="center"
+      justify="space-between"
+      px={5}
+      py={2}
+      position="fixed"
+      bg={bg}
+      top="0"
+      left="0"
+      right="0"
+      zIndex={1}
+    >
+      <Box>
+        <Flex gap={4}>
+          <Link href="/" fontSize="40px" position="relative" as={NextLink}>
+            👾
+          </Link>
+          <LanguageSwitcher />
+        </Flex>
+      </Box>
+      <Box>
+        <Flex align="center" fontSize={16} gap={4}>
+          <IconButton
+            aria-label="Toggle Dark/Light Mode"
+            icon={colorMode === "light" ? <FaMoon /> : <FiSun />}
+            onClick={() => toggleColorMode()}
+          />
+          <Box display={{ base: "none", md: "block" }}>
+            <Link href="/about" mr={4} as={NextLink}>
+              About
+            </Link>
+            <Link href="/projects" as={NextLink}>
+              Projects
+            </Link>
+          </Box>
+          <Menu>
+            <MenuButton
+              as={IconButton}
+              icon={<HamburgerIcon />}
+              variant="outline"
+              display={{ base: "block", md: "none" }}
+            />
+            <MenuList>
+              <MenuItem as={NextLink} mr={4} href="/about">
+                About
+              </MenuItem>
+              <MenuItem as={NextLink} mr={4} href="/projects">
+                Projects
+              </MenuItem>
+            </MenuList>
+          </Menu>
+        </Flex>
+      </Box>
+    </Flex>
+  );
 }
 
 export default Nav;

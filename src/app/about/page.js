@@ -1,9 +1,17 @@
 'use client'
 
 import Image from "next/image";
-import html from "../../images/html-5.png";
-import css from "../../images/css-3.png";
-import javascript from "../../images/js.png";
+import atom from "../../images/atom.png"
+import node from "../../images/node-js.png";
+import ux from "../../images/ux.png";
+import { Box, Container,SimpleGrid, Heading, Stack, Text } from "@chakra-ui/react";
+import {
+    Accordion,
+    AccordionItem,
+    AccordionButton,
+    AccordionPanel,
+    AccordionIcon,
+  } from '@chakra-ui/react'
 import styles from "./about.module.css";
 import { useLanguage } from '../../LanguageContext';
 
@@ -22,36 +30,36 @@ const about =  {
 const skills = [
     {
         id: 1,
-        title: "HTML",
-        image: html,
+        title: "Frontend Web Development",
+        image: ux,
         en: {
-            description: "HTML is one of my strongest skills, and I take great pleasure in creating well-structured and semantic markup. I am familiar with all the core HTML tags and attributes, and understand how to use them effectively to create clear and accessible content. Whether it's designing a layout from scratch or working with a pre-existing template, I am able to implement HTML code that is both clean and efficient. Additionally, I keep up-to-date with the latest developments in HTML, ensuring that my knowledge is always current and relevant.",
+            description: "As a Frontend Web Developer, I possess comprehensive knowledge in key technologies such as HTML, CSS, and JavaScript. With an eye for design and user experience, I craft engaging, functional, and user-friendly web applications. The ability to seamlessly navigate between various frontend technologies empowers me to develop creative solutions and ensure that my projects perform optimally on every screen and in every browser.",
         },
         de: {
-            description: "HTML ist eine meiner stärksten Fähigkeiten und es bereitet mir große Freude, gut strukturiertes und semantisches Markup zu erstellen. Ich bin mit allen grundlegenden HTML-Tags und Attributen vertraut und verstehe, wie man sie effektiv einsetzt, um klare und zugängliche Inhalte zu erstellen. Ob es darum geht, ein Layout von Grund auf zu gestalten oder mit einer vorhandenen Vorlage zu arbeiten, ich bin in der Lage, HTML-Code zu implementieren, der sowohl sauber als auch effizient ist. Zusätzlich halte ich mich auf dem Laufenden über die neuesten Entwicklungen in HTML, um sicherzustellen, dass mein Wissen stets aktuell und relevant ist.",
+            description: "Als Frontend Web Developer verfüge ich über umfassende Kenntnisse in den Schlüsseltechnologien HTML, CSS und JavaScript. Mit einem Auge für Design und Benutzererfahrung erstelle ich ansprechende, funktionale und benutzerfreundliche Webanwendungen. Die Fähigkeit, nahtlos zwischen den verschiedenen Frontend-Technologien zu navigieren, ermöglicht es mir, kreative Lösungen zu entwickeln und sicherzustellen, dass meine Projekte auf jedem Bildschirm und in jedem Browser optimal funktionieren.",
         }
     },
     {
         id: 2,
-        title: "CSS",
-        image: css,
+        title: "React Mastery: Web & Mobile Development",
+        image: atom,
         en: {
-            description: "I am quite proficient in CSS and enjoy designing visually appealing and responsive user interfaces. With my strong understanding of CSS properties and selectors, I am able to create custom styles and layouts that elevate the overall aesthetic of any website or application. Whether it's implementing animations, transitions, or complex grid systems, I take great pride in my ability to bring a designer's vision to life through CSS.",
+            description: "Possessing extensive expertise in React, I have not only crafted web applications but also ventured into mobile app development. My skills in React empower me to design intricate user interfaces and build responsive applications for both web and mobile platforms. Leveraging my experience in delivering projects, I ensure that the developed applications are not only functional but also at the forefront of technological excellence.",
         },
         de: {
-            description: "Ich bin ziemlich versiert in CSS und genieße es, optisch ansprechende und reaktionsfähige Benutzeroberflächen zu entwerfen. Mit meinem starken Verständnis von CSS-Eigenschaften und Selektoren kann ich benutzerdefinierte Stile und Layouts erstellen, die die Gesamtästhetik jeder Website oder Anwendung verbessern. Ob es darum geht, Animationen, Übergänge oder komplexe Raster-Systeme zu implementieren, ich bin sehr stolz auf meine Fähigkeit, die Vision eines Designers durch CSS zum Leben zu erwecken.",
+            description: "Mit umfassender Expertise in React habe ich nicht nur Webanwendungen, sondern auch mobile Apps entwickelt. Meine Fähigkeiten in React ermöglichen es mir, komplexe Benutzeroberflächen zu gestalten und reaktionsfähige Anwendungen sowohl für das Web als auch für mobile Plattformen zu schaffen. Durch meine Erfahrung in der Umsetzung von Projekten kann ich sicherstellen, dass die entwickelten Anwendungen nicht nur funktional, sondern auch auf höchstem technischen Niveau sind.",
         }
         
     },
     {
         id: 3,
-        title: "JavaScript",
-        image: javascript,
+        title: "Serverside Developments",
+        image: node,
         en: {
-            description: "I have a solid understanding of JavaScript and enjoy working with its dynamic and versatile features. Whether it's creating interactive elements on a website, implementing complex logic, or manipulating the DOM, I am well-versed in a variety of JavaScript frameworks and libraries. I also have experience with front-end frameworks like React and Vue, which allow me to build scalable and efficient web applications. With my strong problem-solving skills and attention to detail, I am able to write clean and optimized JavaScript code that enhances the functionality and user experience of any web project.",
+            description: "Bringing experience in Server Side Development, I have successfully executed backend projects. I have created databases using Node.js and Express.js, built robust servers to store data, and implemented APIs for efficient information retrieval. My focus is on developing scalable and high-performance server-side solutions that meet the demands of modern applications.",
         },
         de: {
-            description: "Ich verstehe JavaScript solide und arbeite gerne mit seinen dynamischen und vielseitigen Funktionen. Ob es darum geht, interaktive Elemente auf einer Website zu erstellen, komplexe Logik zu implementieren oder den DOM zu manipulieren, ich bin gut vertraut mit verschiedenen JavaScript-Frameworks und Bibliotheken. Ich habe auch Erfahrung mit Front-End-Frameworks wie React und Vue, die es mir ermöglichen, skalierbare und effiziente Webanwendungen zu erstellen. Mit meinen starken Problemlösungsfähigkeiten und meiner Liebe zum Detail bin ich in der Lage, sauberen und optimierten JavaScript-Code zu schreiben, der die Funktionalität und Benutzererfahrung jedes Webprojekts verbessert.",
+            description: "Mit Erfahrung im Bereich Server Side Development habe ich bereits erfolgreich Backend-Projekte umgesetzt. Ich habe Datenbanken unter Verwendung von Node.js und Express.js erstellt, robuste Server aufgebaut, um Daten zu speichern, und APIs implementiert, um Informationen effizient abzurufen. Mein Fokus liegt auf der Entwicklung skalierbarer und performanter serverseitiger Lösungen, die den Anforderungen moderner Anwendungen gerecht werden.",
         }
     }
 ]
@@ -61,32 +69,34 @@ export default function About() {
     const { language } = useLanguage();
 
     return(
-        <div className="page">
-            <div data-aos="fade-up">
-            <div className={styles.about__section}>
-                <h1>Hello, world! 👋,</h1>
-                <p>{language === 'en' ? about.en.subheading : about.de.subheading}</p>
-                <h2>{language === 'en' ? "About Me" : "Über Mich"}</h2>
-                <p>{language === 'en' ? about.en.description : about.de.description}</p>
-            </div>
-            <div className={styles.skills__section}>
-                <h1 className={styles.skills__heading}>{language === 'en' ? "My skills" : "Meine Fähigkeiten"}</h1>
-                <div className={styles.skills__container}>
+        <Container maxW="container.xl">
+            <Box data-aos="fade-up" mt={0} pb={88}>
+            <Box>
+                <Heading as="h1" size="2xl" mt={0}>Hello, world! 👋,</Heading>
+                <Text>{language === 'en' ? about.en.subheading : about.de.subheading}</Text>
+                <Heading as="h2">{language === 'en' ? "About Me" : "Über Mich"}</Heading>
+                <Text>{language === 'en' ? about.en.description : about.de.description}</Text>
+            </Box>
+            <Box>
+                <Heading as="h2" size="xl" >{language === 'en' ? "My Skills" : "Meine Fähigkeiten"}</Heading>
+                <SimpleGrid minChildWidth={[350, 500, 500, 700, 350, 350]} spacing='40px' columns={1} >
                     {skills.map((card) => 
-                        <div className={styles.card} key={card.id}>
-                            <div className={styles.card__header}>
-                                <h2>{card.title}</h2>
-                                <Image className={styles.card__image} src={card.image} alt="" />
-                            </div>
-                            <div className={styles.card__content}>
-                                <p>{language === 'en' ? card.en.description : card.de.description}</p>
-                            </div>
-                        </div>
+                        <Stack key={card.id}  >
+                            <Stack align="center">
+                                <Heading as="h2" size="lg" textAlign="center">{card.title}</Heading>
+                                <Box my="30px">
+                                    <Image src={card.image} alt=""  />
+                                </Box>
+                            </Stack>
+                            <Stack align="center" justifyContent="center">
+                                <Text >{language === 'en' ? card.en.description : card.de.description}</ Text>
+                            </Stack>
+                        </Stack>
                             )
                     }
-                </div>
-            </div>
-        </div>
-        </div>
+                </SimpleGrid>
+            </Box>
+        </Box>
+        </ Container>
     )
 }
