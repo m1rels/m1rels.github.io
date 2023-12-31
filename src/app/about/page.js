@@ -83,7 +83,7 @@ export default function About() {
                     {skills.map((card) => 
                         <Stack key={card.id}  >
                             <Stack align="center">
-                                <Heading as="h2" size="lg" textAlign="center">{card.title}</Heading>
+                                <Heading as="h2" size="lg" height={{"lg": "72px"}} textAlign="center">{card.title}</Heading>
                                 <Box my="30px">
                                     <Image src={card.image} alt=""  />
                                 </Box>

@@ -23,20 +23,9 @@ const LanguageSwitcher = () => {
   return (
     <Box mt={2}>
     <Menu>
-      <MenuButton as={Button}>
-        {language === "en" ? "ENG 🇬🇧" : "DE 🇩🇪"}
+      <MenuButton as={Button} onClick={() => handleLanguageChange(language === "en" ?  "de" : "en")}>
+        {language === "en" ? "🇩🇪" : "🇬🇧"}
       </MenuButton>
-      <MenuList>
-        {language === "en" ? (
-          <MenuItem value="de" onClick={() => handleLanguageChange("de")}>
-            DE 🇩🇪
-          </MenuItem>
-        ) : (
-          <MenuItem value="en" onClick={() => handleLanguageChange("en")}>
-            ENG 🇬🇧
-          </MenuItem>
-        )}
-      </MenuList>
     </Menu>
     </Box>
   );

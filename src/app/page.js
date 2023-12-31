@@ -3,8 +3,8 @@
 import styles from "./page.module.css";
 import { useLanguage } from "../LanguageContext";
 import { useEffect } from "react";
+import profile from "../images/me.png";
 import Button from "@/components/Button";
-import profile from "../images/me.jpg";
 import { IoLogoGithub } from "react-icons/io";
 import { MdOutlineEmail } from "react-icons/md";
 import AOS from "aos";
@@ -23,12 +23,10 @@ export default function Home() {
   return (
     <Flex align="center" justify="center" direction="column" minH="80vh" data-aos="zoom-in" >
       <Stack align="center" mb={20}>
-      <Image
-            className={styles.profile}
-            src={profile}
-            alt="Profile of Mirel Korajac"
-            priority={true}
-          />
+        <Image 
+        className={styles.profile}
+        src={profile}
+        />
           <Heading as="h1" size="2xl" textAlign="center">Mirel Korajac</Heading>
           <Heading as="h5" size="xl" textAlign="center">
             {language === "en"
