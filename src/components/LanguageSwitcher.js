@@ -21,7 +21,7 @@ const LanguageSwitcher = () => {
   };
 
   return (
-    <Box mt={2}>
+    <Box>
     <Menu>
       <MenuButton as={Button} onClick={() => handleLanguageChange(language === "en" ?  "de" : "en")}>
         {language === "en" ? "🇩🇪" : "🇬🇧"}

@@ -40,11 +40,14 @@ function Nav() {
     >
       <Box width="100%">
         <Flex align="center" fontSize={16} gap={4} justifyContent="space-between">
+          <Flex gap={4} align="center" alignItems="center">
           <IconButton
             aria-label="Toggle Dark/Light Mode"
             icon={colorMode === "light" ? <FaMoon /> : <FiSun />}
             onClick={() => toggleColorMode()}
           />
+          <LanguageSwitcher />
+          </Flex>
           <Box display={{ base: "none", md: "block" }}>
             <Link href="/about" mr={4} as={NextLink}>
               About

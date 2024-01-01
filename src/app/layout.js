@@ -2,7 +2,6 @@ import { Providers } from "./providers";
 import { fonts } from './fonts'
 import { LanguageProvider } from "@/LanguageContext";
 import "./globals.css";
-import { Nunito } from "next/font/google";
 import Nav from "@/components/Nav";
 
 export const metadata = {
