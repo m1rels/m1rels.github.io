@@ -26,6 +26,8 @@ export default function Home() {
         <Image 
         className={styles.profile}
         src={profile}
+        alt="Profile Picture of Mirel Korajac"
+        priority={true}
         />
           <Heading as="h1" size="2xl" textAlign="center">Mirel Korajac</Heading>
           <Heading as="h5" size="xl" textAlign="center">

@@ -38,16 +38,8 @@ function Nav() {
       right="0"
       zIndex={1}
     >
-      <Box>
-        <Flex gap={4}>
-          <Link href="/" fontSize="40px" position="relative" as={NextLink}>
-            👾
-          </Link>
-          <LanguageSwitcher />
-        </Flex>
-      </Box>
-      <Box>
-        <Flex align="center" fontSize={16} gap={4}>
+      <Box width="100%">
+        <Flex align="center" fontSize={16} gap={4} justifyContent="space-between">
           <IconButton
             aria-label="Toggle Dark/Light Mode"
             icon={colorMode === "light" ? <FaMoon /> : <FiSun />}
@@ -61,7 +53,9 @@ function Nav() {
               Projects
             </Link>
           </Box>
-          <Menu>
+        </Flex>
+      </Box>
+      <Menu>
             <MenuButton
               as={IconButton}
               icon={<HamburgerIcon />}
@@ -77,8 +71,6 @@ function Nav() {
               </MenuItem>
             </MenuList>
           </Menu>
-        </Flex>
-      </Box>
     </Flex>
   );
 }
