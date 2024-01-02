@@ -9,8 +9,19 @@ export const useLanguage = () => {
 };
 
 export const LanguageProvider = ({ children }) => {
-  const storedLanguage = localStorage.getItem("language");
-  const [language, setLanguage] = useState(storedLanguage || "en");
+  const [language, setLanguage] = useState("en");
+
+  useEffect(() => {
+    const initializeLanguage = async () => {
+      if (typeof window !== 'undefined' && typeof Storage !== 'undefined') {
+        // Prüfe, ob localStorage-Funktionalität unterstützt wird
+        const storedLanguage = localStorage.getItem('language');
+        setLanguage(storedLanguage);
+      }
+    };
+
+    initializeLanguage();
+  }, []); // Leeres Abhängigkeitsarray, um sicherzustellen, dass dies nur einmal beim Montieren ausgeführt wird
 
   useEffect(() => {
     localStorage.setItem("language", language);
