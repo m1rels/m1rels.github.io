@@ -25,6 +25,7 @@ const skills = [
         id: 1,
         title: "Frontend Web Development",
         image: ux,
+        priority: true,
         en: {
             description: "As a Frontend Web Developer, I possess comprehensive knowledge in key technologies such as HTML, CSS, and JavaScript. With an eye for design and user experience, I craft engaging, functional, and user-friendly web applications. The ability to seamlessly navigate between various frontend technologies empowers me to develop creative solutions and ensure that my projects perform optimally on every screen and in every browser.",
         },
@@ -36,6 +37,7 @@ const skills = [
         id: 2,
         title: "React Mastery: Web & Mobile Development",
         image: atom,
+        priority: false,
         en: {
             description: "Possessing extensive expertise in React, I have not only crafted web applications but also ventured into mobile app development. My skills in React empower me to design intricate user interfaces and build responsive applications for both web and mobile platforms. Leveraging my experience in delivering projects, I ensure that the developed applications are not only functional but also at the forefront of technological excellence.",
         },
@@ -48,6 +50,7 @@ const skills = [
         id: 3,
         title: "Serverside Developments",
         image: node,
+        priority: false,
         en: {
             description: "Bringing experience in Server Side Development, I have successfully executed backend projects. I have created databases using Node.js and Express.js, built robust servers to store data, and implemented APIs for efficient information retrieval. My focus is on developing scalable and high-performance server-side solutions that meet the demands of modern applications.",
         },
@@ -78,7 +81,7 @@ export default function About() {
                             <Stack align="center">
                                 <Heading as="h2" size="lg" height={{"lg": "72px"}} textAlign="center">{card.title}</Heading>
                                 <Box my="30px">
-                                    <Image src={card.image} alt=""   />
+                                    <Image src={card.image} alt="" priority={card.priority}  />
                                 </Box>
                             </Stack>
                             <Stack align="center" justifyContent="center">
