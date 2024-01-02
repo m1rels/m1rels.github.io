@@ -1,15 +1,6 @@
-import styles from "./LanguageSwitcher.module.css";
+import React from "react";
 import {
-  Box,
   Button,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuItemOption,
-  MenuGroup,
-  MenuOptionGroup,
-  MenuDivider,
 } from "@chakra-ui/react";
 import { useLanguage } from "../LanguageContext";
 
@@ -21,13 +12,9 @@ const LanguageSwitcher = () => {
   };
 
   return (
-    <Box>
-    <Menu>
-      <MenuButton as={Button} onClick={() => handleLanguageChange(language === "en" ?  "de" : "en")}>
+    <Button onClick={() => handleLanguageChange(language === "en" ?  "de" : "en")}>
         {language === "en" ? "🇩🇪" : "🇬🇧"}
-      </MenuButton>
-    </Menu>
-    </Box>
+    </Button>
   );
 };
 

@@ -1,6 +1,6 @@
 'use client'
 
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const LanguageContext = createContext();
 
@@ -9,7 +9,12 @@ export const useLanguage = () => {
 };
 
 export const LanguageProvider = ({ children }) => {
-  const [language, setLanguage] = useState('en'); // Standardmäßig Englisch
+  const storedLanguage = localStorage.getItem("language");
+  const [language, setLanguage] = useState(storedLanguage || "en");
+
+  useEffect(() => {
+    localStorage.setItem("language", language);
+  }, [language]);
 
   return (
     <LanguageContext.Provider value={{language, setLanguage}}>
