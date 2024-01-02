@@ -1,17 +1,10 @@
 'use client'
 
-import Image from "next/image";
 import atom from "../../images/atom.png"
 import node from "../../images/node-js.png";
 import ux from "../../images/ux.png";
 import { Box, Container,SimpleGrid, Heading, Stack, Text } from "@chakra-ui/react";
-import {
-    Accordion,
-    AccordionItem,
-    AccordionButton,
-    AccordionPanel,
-    AccordionIcon,
-  } from '@chakra-ui/react'
+import Image from "next/image";
 import styles from "./about.module.css";
 import { useLanguage } from '../../LanguageContext';
 
@@ -85,7 +78,7 @@ export default function About() {
                             <Stack align="center">
                                 <Heading as="h2" size="lg" height={{"lg": "72px"}} textAlign="center">{card.title}</Heading>
                                 <Box my="30px">
-                                    <Image src={card.image} alt=""  />
+                                    <Image src={card.image} alt=""   />
                                 </Box>
                             </Stack>
                             <Stack align="center" justifyContent="center">
