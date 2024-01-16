@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaMoon } from "react-icons/fa";
 import { FiSun } from "react-icons/fi";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
@@ -14,15 +14,29 @@ import {
   MenuList,
   MenuItem,
   useColorMode,
-  useColorModeValue
+  useColorModeValue,
+  CircularProgress,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
-import { Link } from '@chakra-ui/next-js'
-
+import { Link } from "@chakra-ui/next-js";
 
 function Nav() {
+  const [isLoading, setIsLoading] = useState(true);
   const { colorMode, toggleColorMode } = useColorMode();
-  const bg = useColorModeValue('white', 'gray.800')
+  const bg = useColorModeValue("white", "gray.800");
+  const progressColor = useColorModeValue("gray.800", "white");
+
+  useEffect(() => {
+    setIsLoading(false);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <Flex align="center" justify="center" m={10}>
+        <CircularProgress isIndeterminate thickness={4} color={progressColor} />
+      </Flex>
+    );
+  }
 
   return (
     <Flex
@@ -39,14 +53,19 @@ function Nav() {
       zIndex={1}
     >
       <Box width="100%">
-        <Flex align="center" fontSize={16} gap={4} justifyContent="space-between">
+        <Flex
+          align="center"
+          fontSize={16}
+          gap={4}
+          justifyContent="space-between"
+        >
           <Flex gap={4} align="center" alignItems="center">
-          <IconButton
-            aria-label="Toggle Dark/Light Mode"
-            icon={colorMode === "light" ? <FaMoon /> : <FiSun />}
-            onClick={() => toggleColorMode()}
-          />
-          <LanguageSwitcher />
+            <IconButton
+              aria-label="Toggle Dark/Light Mode"
+              icon={colorMode === "light" ? <FaMoon /> : <FiSun />}
+              onClick={() => toggleColorMode()}
+            />
+            <LanguageSwitcher />
           </Flex>
           <Box display={{ base: "none", md: "block" }}>
             <Link href="/about" mr={4} as={NextLink}>
@@ -59,21 +78,21 @@ function Nav() {
         </Flex>
       </Box>
       <Menu>
-            <MenuButton
-              as={IconButton}
-              icon={<HamburgerIcon />}
-              variant="outline"
-              display={{ base: "block", md: "none" }}
-            />
-            <MenuList>
-              <MenuItem as={NextLink} mr={4} href="/about">
-                About
-              </MenuItem>
-              <MenuItem as={NextLink} mr={4} href="/projects">
-                Projects
-              </MenuItem>
-            </MenuList>
-          </Menu>
+        <MenuButton
+          as={IconButton}
+          icon={<HamburgerIcon />}
+          variant="outline"
+          display={{ base: "block", md: "none" }}
+        />
+        <MenuList>
+          <MenuItem as={NextLink} mr={4} href="/about">
+            About
+          </MenuItem>
+          <MenuItem as={NextLink} mr={4} href="/projects">
+            Projects
+          </MenuItem>
+        </MenuList>
+      </Menu>
     </Flex>
   );
 }
