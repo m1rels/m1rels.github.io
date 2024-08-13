@@ -15,9 +15,9 @@
 }
 
 .profile {
-  height: 150px;
-  width: 150px;
-  border-radius: 125px;
+  height: 140px;
+  width: 140px;
+  border-radius: 70px;
 }
 
 
@@ -26,8 +26,8 @@
     max-width: 500px;
   }
   .profile {
-    height: 250px;
-    width: 250px;
-    border-radius: 125px;
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
   }
 }

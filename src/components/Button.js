@@ -3,9 +3,9 @@ import styles from "./button.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
-function AppButton({text, icon}) {
+function AppButton({text, icon, onClick}) {
     return (
-            <Button leftIcon={icon} size="lg" colorScheme='teal'>{text}</Button>
+            <Button leftIcon={icon} size="md" colorScheme='teal' onClick={onClick}>{text}</Button>
     )
 }
 

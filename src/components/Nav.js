@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import { FaMoon } from "react-icons/fa";
 import { FiSun } from "react-icons/fi";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
-import NextLink from "next/link";
 import {
   Box,
   Flex,
@@ -17,28 +16,12 @@ import {
   useColorModeValue,
   CircularProgress,
 } from "@chakra-ui/react";
-import { HamburgerIcon } from "@chakra-ui/icons";
-import { Link } from "@chakra-ui/next-js";
 
 function Nav() {
-  const [isLoading, setIsLoading] = useState(true);
   const { colorMode, toggleColorMode } = useColorMode();
-  const bg = useColorModeValue("white", "gray.800");
-  const progressColor = useColorModeValue("gray.800", "white");
-
-  useEffect(() => {
-    setIsLoading(false);
-  }, []);
-
-  if (isLoading) {
-    return (
-      <Flex align="center" justify="center" m={10}>
-        <CircularProgress isIndeterminate thickness={4} color={progressColor} />
-      </Flex>
-    );
-  }
 
   return (
+    <>
     <Flex
       as="nav"
       align="center"
@@ -46,11 +29,9 @@ function Nav() {
       px={5}
       py={2}
       position="fixed"
-      bg={bg}
       top="0"
       left="0"
       right="0"
-      zIndex={1}
     >
       <Box width="100%">
         <Flex
@@ -64,36 +45,14 @@ function Nav() {
               aria-label="Toggle Dark/Light Mode"
               icon={colorMode === "light" ? <FaMoon /> : <FiSun />}
               onClick={() => toggleColorMode()}
+              variant='ghost'
             />
             <LanguageSwitcher />
           </Flex>
-          <Box display={{ base: "none", md: "block" }}>
-            <Link href="/about" mr={4} as={NextLink}>
-              About
-            </Link>
-            <Link href="/projects" as={NextLink}>
-              Projects
-            </Link>
-          </Box>
         </Flex>
       </Box>
-      <Menu>
-        <MenuButton
-          as={IconButton}
-          icon={<HamburgerIcon />}
-          variant="outline"
-          display={{ base: "block", md: "none" }}
-        />
-        <MenuList>
-          <MenuItem as={NextLink} mr={4} href="/about">
-            About
-          </MenuItem>
-          <MenuItem as={NextLink} mr={4} href="/projects">
-            Projects
-          </MenuItem>
-        </MenuList>
-      </Menu>
     </Flex>
+    </>
   );
 }
 
