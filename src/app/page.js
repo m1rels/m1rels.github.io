@@ -99,7 +99,7 @@ export default function Home() {
             <Text>
               {language === "en" ? (
                 <>
-                  If you`&apos;`re interested in working together, feel free to send me
+                  If you&apos;re interested in working together, feel free to send me
                   an <Link href="mailto:mirelkorajac@gmail.com"><Button variant="link" colorScheme="teal" onClick={(e) => e.stopPropagation()}>email</Button></Link>. You can also explore my projects on my{" "}
                   <Link href="https://github.com/m1rels">
                     <Button variant="link" colorScheme="teal">
