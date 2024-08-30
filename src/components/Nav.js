@@ -8,13 +8,7 @@ import {
   Box,
   Flex,
   IconButton,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
   useColorMode,
-  useColorModeValue,
-  CircularProgress,
 } from "@chakra-ui/react";
 
 function Nav() {
@@ -32,6 +26,7 @@ function Nav() {
       top="0"
       left="0"
       right="0"
+      zIndex={1}
     >
       <Box width="100%">
         <Flex

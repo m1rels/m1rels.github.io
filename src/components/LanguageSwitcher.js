@@ -25,7 +25,7 @@ const LanguageSwitcher = () => {
     >
       <option value="en">🇬🇧</option>
       <option value="de">🇩🇪</option>
-      {language === "en" ? "🇩🇪" : "🇬🇧"}
+      {language === "en" ? "🇬🇧" : "🇩🇪"}
     </Select>
   );
 };

@@ -1,9 +1,9 @@
 import { Providers } from "./providers";
-import { fonts } from './fonts'
+import { fonts } from "./fonts";
 import { LanguageProvider } from "@/LanguageContext";
 import "./globals.css";
 import Nav from "@/components/Nav";
-import { theme } from './theme';
+import { theme } from "./theme";
 import { ColorModeScript } from "@chakra-ui/react";
 
 export const metadata = {
@@ -14,15 +14,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-        <body className={fonts.nunito.variable}>
+      <body className={fonts.nunito.variable}>
+        <ColorModeScript initialColorMode={theme.config.initialColorMode} />
         <LanguageProvider>
           <Providers>
-            <ColorModeScript initialColorMode={theme.config.initialColorMode}/>
             <Nav />
             {children}
           </Providers>
-          </LanguageProvider>
-        </body>
+        </LanguageProvider>
+      </body>
     </html>
   );
 }

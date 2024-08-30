@@ -2,12 +2,10 @@
 
 import styles from "./page.module.css";
 import { useLanguage } from "../LanguageContext";
-import { useEffect } from "react";
 import profile from "../images/me.png";
 import ButtonComp from "@/components/Button";
 import { IoLogoGithub } from "react-icons/io";
 import { MdOutlineEmail } from "react-icons/md";
-import AOS from "aos";
 import "aos/dist/aos.css";
 import Image from "next/image";
 import {
@@ -37,17 +35,12 @@ export default function Home() {
   const { language } = useLanguage();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  useEffect(() => {
-    AOS.init(); // Initialisiere AOS innerhalb des Effekthakens
-  }, []);
-
   return (
     <Flex
       align="center"
       justify="center"
       direction="column"
       minH="80vh"
-      data-aos="zoom-in"
     >
       <Card p={5} borderRadius={20}>
         <CardBody>
